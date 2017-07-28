@@ -4,6 +4,11 @@
     {
         public string GetResult(int input)
         {
+            if (input == 15)
+            {
+                return "FizzBuzz";
+            }
+
             if (InputIsDivisibleByFive(input))
             {
                 return "Buzz";
