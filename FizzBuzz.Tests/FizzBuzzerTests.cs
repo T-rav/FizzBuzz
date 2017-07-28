@@ -87,12 +87,17 @@ namespace FizzBuzz.Tests
         {
             public string GetResult(int input)
             {
-                if (input == 3 || input == 6 || input == 9)
+                if (InputIsDivisibleByThree(input))
                 {
                     return "Fizz";
                 }
 
                 return input.ToString();
+            }
+
+            private static bool InputIsDivisibleByThree(int input)
+            {
+                return input % 3 == 0;
             }
         }
     }
