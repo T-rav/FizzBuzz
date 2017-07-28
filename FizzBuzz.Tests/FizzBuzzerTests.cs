@@ -6,14 +6,22 @@ namespace FizzBuzz.Tests
     public class FizzBuzzerTests
     {
         [Test]
-        public void Method_Whenx_Shouldy()
+        public void GetResult_WhenInputOne_ShouldReturnOne()
         {
             //---------------Set up test pack-------------------
-
+            var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
-
+            var result = fizzBuzzer.GetResult(1);
             //---------------Test Result -----------------------
-            Assert.Fail("Test Not Yet Implemented");
+            Assert.AreEqual("1",result);
+        }
+    }
+
+    public class FizzBuzzer
+    {
+        public string GetResult(int input)
+        {
+            return "1";
         }
     }
 }
