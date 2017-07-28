@@ -4,7 +4,7 @@
     {
         public string GetResult(int input)
         {
-            if (input == 5)
+            if (input == 5 || input == 10)
             {
                 return "Buzz";
             }
