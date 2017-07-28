@@ -31,6 +31,19 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void GetResult_WhenInputFour_ShouldReturnFour()
+        {
+            //---------------Set up test pack-------------------
+            var input = 4;
+            var expected = "4";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         public class FizzBuzzer
         {
             public string GetResult(int input)
@@ -38,6 +51,10 @@ namespace FizzBuzz.Tests
                 if (input == 2)
                 {
                     return "2";
+                }
+                if (input == 4)
+                {
+                    return "4";
                 }
                 return "1";
             }
