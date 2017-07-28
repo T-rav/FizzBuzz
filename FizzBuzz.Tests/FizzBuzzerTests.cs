@@ -15,15 +15,32 @@ namespace FizzBuzz.Tests
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
-            Assert.AreEqual(expected,result);
+            Assert.AreEqual(expected, result);
         }
-    }
 
-    public class FizzBuzzer
-    {
-        public string GetResult(int input)
+        [Test]
+        public void GetResult_WhenInputTwo_ShouldReturnTwo()
         {
-            return "1";
+            //---------------Set up test pack-------------------
+            var input = 2;
+            var expected = "2";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        public class FizzBuzzer
+        {
+            public string GetResult(int input)
+            {
+                if (input == 2)
+                {
+                    return "2";
+                }
+                return "1";
+            }
         }
     }
 }
