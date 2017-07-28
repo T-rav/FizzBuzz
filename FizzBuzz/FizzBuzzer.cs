@@ -4,7 +4,7 @@
     {
         public string GetResult(int input)
         {
-            if (input == 15 || input == 30 || input == 75)
+            if (InputIsDivisibleByThree(input) && InputIsDivisibleByFive(input))
             {
                 return "FizzBuzz";
             }
