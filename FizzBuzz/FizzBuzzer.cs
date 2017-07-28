@@ -4,7 +4,7 @@
     {
         public string GetResult(int input)
         {
-            if (input % 5 == 0)
+            if (InputIsDivisibleByFive(input))
             {
                 return "Buzz";
             }
@@ -15,6 +15,11 @@
             }
 
             return input.ToString();
+        }
+
+        private static bool InputIsDivisibleByFive(int input)
+        {
+            return input % 5 == 0;
         }
 
         private static bool InputIsDivisibleByThree(int input)
