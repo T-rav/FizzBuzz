@@ -44,19 +44,29 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void GetResult_WhenInputThree_ShouldReturnFizz()
+        {
+            //---------------Set up test pack-------------------
+            var input = 3;
+            var expected = "Fizz";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         public class FizzBuzzer
         {
             public string GetResult(int input)
             {
-                if (input == 2)
+                if (input == 3)
                 {
-                    return "2";
+                    return "Fizz";
                 }
-                if (input == 4)
-                {
-                    return "4";
-                }
-                return "1";
+
+                return input.ToString();
             }
         }
     }
