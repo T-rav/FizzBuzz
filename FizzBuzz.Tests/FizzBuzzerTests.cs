@@ -82,23 +82,5 @@ namespace FizzBuzz.Tests
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
-
-        public class FizzBuzzer
-        {
-            public string GetResult(int input)
-            {
-                if (InputIsDivisibleByThree(input))
-                {
-                    return "Fizz";
-                }
-
-                return input.ToString();
-            }
-
-            private static bool InputIsDivisibleByThree(int input)
-            {
-                return input % 3 == 0;
-            }
-        }
     }
 }
