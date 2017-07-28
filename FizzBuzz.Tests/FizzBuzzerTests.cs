@@ -9,11 +9,13 @@ namespace FizzBuzz.Tests
         public void GetResult_WhenInputOne_ShouldReturnOne()
         {
             //---------------Set up test pack-------------------
+            var input = 1;
+            var expected = "1";
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
-            var result = fizzBuzzer.GetResult(1);
+            var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
-            Assert.AreEqual("1",result);
+            Assert.AreEqual(expected,result);
         }
     }
 
