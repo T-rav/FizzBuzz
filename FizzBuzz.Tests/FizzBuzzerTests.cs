@@ -134,5 +134,18 @@ namespace FizzBuzz.Tests
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void GetResult_WhenInputThirty_ShouldReturnFizzBuzz()
+        {
+            //---------------Set up test pack-------------------
+            var input = 30;
+            var expected = "FizzBuzz";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
     }
 }
