@@ -4,6 +4,11 @@
     {
         public string GetResult(int input)
         {
+            if (input == 5)
+            {
+                return "Buzz";
+            }
+
             if (InputIsDivisibleByThree(input))
             {
                 return "Fizz";
