@@ -70,11 +70,24 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void GetResult_WhenInputNine_ShouldReturnFizz()
+        {
+            //---------------Set up test pack-------------------
+            var input = 9;
+            var expected = "Fizz";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         public class FizzBuzzer
         {
             public string GetResult(int input)
             {
-                if (input == 3 || input == 6)
+                if (input == 3 || input == 6 || input == 9)
                 {
                     return "Fizz";
                 }
