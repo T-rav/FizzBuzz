@@ -15,15 +15,15 @@ namespace FizzBuzz
 
             if (InputIsDivisibleByFive(input))
             {
-                return "Buzz" + WhizOrEmptyString(input);
+                return "Buzz" + WhizSuffix(input);
             }
 
             if (InputIsDivisibleByThree(input))
             {
-                return "Fizz" + WhizOrEmptyString(input);
+                return "Fizz" + WhizSuffix(input);
             }
 
-            return IsPrimeNumber(input) ?  WhizOrEmptyString(input) : InputAsString(input);
+            return IsPrimeNumber(input) ?  WhizSuffix(input) : InputAsString(input);
         }
 
         private static string InputAsString(int input)
@@ -31,7 +31,7 @@ namespace FizzBuzz
             return input.ToString();
         }
 
-        private string WhizOrEmptyString(int input)
+        private string WhizSuffix(int input)
         {
             if (IsPrimeNumber(input))
             {
