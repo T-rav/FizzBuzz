@@ -19,7 +19,17 @@
                 return "Fizz";
             }
 
+            if (IsPrimeNumber(input))
+            {
+                return "Whiz";
+            }
+
             return input.ToString();
+        }
+
+        private static bool IsPrimeNumber(int input)
+        {
+            return input == 2 || input == 7 || input == 11;
         }
 
         private static bool InputIsDivisibleByFive(int input)

@@ -6,7 +6,6 @@ namespace FizzBuzz.Tests
     public class FizzBuzzerTests
     {
         [TestCase(1, "1")]
-        [TestCase(2, "2")]
         [TestCase(4, "4")]
         public void GetResult_WhenNumberNotDivisibleBy3or5_ShouldReturnNumber(int input, string expected)
         {
@@ -48,6 +47,19 @@ namespace FizzBuzz.Tests
         [TestCase(30, "FizzBuzz")]
         [TestCase(75, "FizzBuzz")]
         public void GetResult_WhenNumberDivisibleBy3and5_ShouldReturnFizzBuzz(int input, string expected)
+        {
+            //---------------Set up test pack-------------------
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestCase(2, "Whiz")]
+        [TestCase(7, "Whiz")]
+        [TestCase(11, "Whiz")]
+        public void GetResult_WhenNumberPrimeAndNotDivisible_ShouldReturnWhiz(int input, string expected)
         {
             //---------------Set up test pack-------------------
             var fizzBuzzer = new FizzBuzzer();
