@@ -17,7 +17,6 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
  
-        [TestCase(3, "Fizz")]
         [TestCase(6, "Fizz")]
         [TestCase(9, "Fizz")]
         public void GetResult_WhenNumberDivisibleBy3_ShouldReturnFizz(int input, string expected)
@@ -30,7 +29,6 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
 
-        [TestCase(5, "Buzz")]
         [TestCase(10, "Buzz")]
         [TestCase(20, "Buzz")]
         public void GetResult_WhenNumberDivisibleBy5_ShouldReturnBuzz(int input, string expected)
@@ -59,9 +57,35 @@ namespace FizzBuzz.Tests
         [TestCase(2, "Whiz")]
         [TestCase(7, "Whiz")]
         [TestCase(11, "Whiz")]
-        public void GetResult_WhenNumberPrimeAndNotDivisible_ShouldReturnWhiz(int input, string expected)
+        public void GetResult_WhenNumberPrimeNot3or5_ShouldReturnWhiz(int input, string expected)
         {
             //---------------Set up test pack-------------------
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void GetResult_WhenNumber3_ShouldReturnFizzWhiz()
+        {
+            //---------------Set up test pack-------------------
+            var input = 3;
+            var expected = "FizzWhiz";
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void GetResult_WhenNumber5_ShouldReturnBuzzWhiz()
+        {
+            //---------------Set up test pack-------------------
+            var input = 5;
+            var expected = "BuzzWhiz";
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);

@@ -13,20 +13,30 @@ namespace FizzBuzz
 
             if (InputIsDivisibleByFive(input))
             {
-                return "Buzz";
+                return "Buzz" + WhizOrEmptyString(input);
             }
 
             if (InputIsDivisibleByThree(input))
             {
-                return "Fizz";
+                return "Fizz" + WhizOrEmptyString(input);
             }
 
+            return IsPrimeNumber(input) ?  WhizOrEmptyString(input) : InputAsString(input);
+        }
+
+        private static string InputAsString(int input)
+        {
+            return input.ToString();
+        }
+
+        private string WhizOrEmptyString(int input)
+        {
             if (IsPrimeNumber(input))
             {
                 return "Whiz";
             }
 
-            return input.ToString();
+            return string.Empty;
         }
 
         private static bool IsPrimeNumber(int input)
