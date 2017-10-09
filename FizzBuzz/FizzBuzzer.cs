@@ -4,6 +4,8 @@ namespace FizzBuzz
 {
     public class FizzBuzzer
     {
+        private const int MaxPrime = 97;
+
         public string GetResult(int input)
         {
             if (InputIsDivisibleByThree(input) && InputIsDivisibleByFive(input))
@@ -41,6 +43,11 @@ namespace FizzBuzz
 
         private static bool IsPrimeNumber(int input)
         {
+            if (input > MaxPrime)
+            {
+                return false;
+            }
+
             return Enumerable.Range(1, input)
                 .Where(x => input % x == 0)
                 .SequenceEqual(new[] {1, input});

@@ -56,10 +56,23 @@ namespace FizzBuzz.Tests
 
         [TestCase(2, "Whiz")]
         [TestCase(7, "Whiz")]
-        [TestCase(11, "Whiz")]
+        [TestCase(97, "Whiz")]
         public void GetResult_WhenNumberPrimeNot3or5_ShouldReturnWhiz(int input, string expected)
         {
             //---------------Set up test pack-------------------
+            var fizzBuzzer = new FizzBuzzer();
+            //---------------Execute Test ----------------------
+            var result = fizzBuzzer.GetResult(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void GetResult_WhenPrimeLarger100_ShouldReturnNumber()
+        {
+            //---------------Set up test pack-------------------
+            var input = 101;
+            var expected = "101";
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
