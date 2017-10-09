@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz
+﻿using System.Linq;
+
+namespace FizzBuzz
 {
     public class FizzBuzzer
     {
@@ -29,7 +31,9 @@
 
         private static bool IsPrimeNumber(int input)
         {
-            return input == 2 || input == 7 || input == 11;
+            return Enumerable.Range(1, input)
+                .Where(x => input % x == 0)
+                .SequenceEqual(new[] {1, input});
         }
 
         private static bool InputIsDivisibleByFive(int input)
