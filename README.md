@@ -1,2 +1,2 @@
 # FizzBuzz
-An example FizzBuzz implementation in C#
+A reference implementation of FizzBuzz in C#, include the Whiz bonus section.
