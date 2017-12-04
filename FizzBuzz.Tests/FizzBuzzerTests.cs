@@ -18,55 +18,59 @@ namespace FizzBuzz.Tests
             Assert.AreEqual(expected, result);
         }
  
-        [TestCase(6, "Fizz")]
-        [TestCase(9, "Fizz")]
-        public void GetResult_WhenNumberDivisibleBy3_ShouldReturnFizz(int input, string expected)
+        [TestCase(6)]
+        [TestCase(9)]
+        public void GetResult_WhenNumberDivisibleBy3_ShouldReturnFizz(int input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
+            var expected = "Fizz";
             Assert.AreEqual(expected, result);
         }
 
-        [TestCase(10, "Buzz")]
-        [TestCase(20, "Buzz")]
-        public void GetResult_WhenNumberDivisibleBy5_ShouldReturnBuzz(int input, string expected)
+        [TestCase(10)]
+        [TestCase(20)]
+        public void GetResult_WhenNumberDivisibleBy5_ShouldReturnBuzz(int input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
+            var expected = "Buzz";
             Assert.AreEqual(expected, result);
         }
 
-        [TestCase(15, "FizzBuzz")]
-        [TestCase(30, "FizzBuzz")]
-        [TestCase(75, "FizzBuzz")]
-        public void GetResult_WhenNumberDivisibleBy3and5_ShouldReturnFizzBuzz(int input, string expected)
+        [TestCase(15)]
+        [TestCase(30)]
+        [TestCase(75)]
+        public void GetResult_WhenNumberDivisibleBy3and5_ShouldReturnFizzBuzz(int input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzzer = new FizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
+            var expected = "FizzBuzz";
             Assert.AreEqual(expected, result);
         }
 
-        [TestCase(2, "Whiz")]
-        [TestCase(7, "Whiz")]
-        [TestCase(97, "Whiz")]
-        public void GetResult_WhenNumberPrimeNot3or5_ShouldReturnWhiz(int input, string expected)
-        {
-            //---------------Set up test pack-------------------
-            var fizzBuzzer = new FizzBuzzer();
-            //---------------Execute Test ----------------------
-            var result = fizzBuzzer.GetResult(input);
-            //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result);
-        }
+    [TestCase(2)]
+    [TestCase(7)]
+    [TestCase(97)]
+    public void GetResult_WhenNumberPrimeNot3or5_ShouldReturnWhiz(int input)
+    {
+        //---------------Set up test pack-------------------
+        var fizzBuzzer = new FizzBuzzer();
+        //---------------Execute Test ----------------------
+        var result = fizzBuzzer.GetResult(input);
+        //---------------Test Result -----------------------
+        var expected = "Whiz";
+        Assert.AreEqual(expected, result);
+    }
 
         [Test]
         public void GetResult_WhenPrimeLarger100_ShouldReturnNumber()
