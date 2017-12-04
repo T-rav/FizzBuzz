@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+using NUnit.Framework;
 
 namespace FizzBuzz.Tests
 {
@@ -104,6 +105,22 @@ namespace FizzBuzz.Tests
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        [Ignore("Example Learning Test")]
+        public void LearningTest_Goal_CalculatePrimes()
+        {
+            // arrange
+            var canidateNumber = 2;
+            var expected = true;
+            // act
+            var isPrime = Enumerable
+                .Range(1, canidateNumber).Where(x => canidateNumber % x == 0)
+                .SequenceEqual(new[] { 1, canidateNumber });
+
+            // assert
+            Assert.AreEqual(expected, isPrime);
         }
     }
 }
