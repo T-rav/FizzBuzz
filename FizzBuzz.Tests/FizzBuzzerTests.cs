@@ -11,7 +11,7 @@ namespace FizzBuzz.Tests
         public void GetResult_WhenNumberNotDivisibleBy3or5_ShouldReturnNumber(int input, string expected)
         {
             //---------------Set up test pack-------------------
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -23,7 +23,7 @@ namespace FizzBuzz.Tests
         public void GetResult_WhenNumberDivisibleBy3_ShouldReturnFizz(int input)
         {
             //---------------Set up test pack-------------------
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -36,7 +36,7 @@ namespace FizzBuzz.Tests
         public void GetResult_WhenNumberDivisibleBy5_ShouldReturnBuzz(int input)
         {
             //---------------Set up test pack-------------------
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -50,7 +50,7 @@ namespace FizzBuzz.Tests
         public void GetResult_WhenNumberDivisibleBy3and5_ShouldReturnFizzBuzz(int input)
         {
             //---------------Set up test pack-------------------
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -64,7 +64,7 @@ namespace FizzBuzz.Tests
     public void GetResult_WhenNumberPrimeNot3or5_ShouldReturnWhiz(int input)
     {
         //---------------Set up test pack-------------------
-        var fizzBuzzer = new FizzBuzzer();
+        var fizzBuzzer = CreateFizzBuzzer();
         //---------------Execute Test ----------------------
         var result = fizzBuzzer.GetResult(input);
         //---------------Test Result -----------------------
@@ -78,7 +78,7 @@ namespace FizzBuzz.Tests
             //---------------Set up test pack-------------------
             var input = 101;
             var expected = "101";
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -91,7 +91,7 @@ namespace FizzBuzz.Tests
             //---------------Set up test pack-------------------
             var input = 3;
             var expected = "FizzWhiz";
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -104,7 +104,7 @@ namespace FizzBuzz.Tests
             //---------------Set up test pack-------------------
             var input = 5;
             var expected = "BuzzWhiz";
-            var fizzBuzzer = new FizzBuzzer();
+            var fizzBuzzer = CreateFizzBuzzer();
             //---------------Execute Test ----------------------
             var result = fizzBuzzer.GetResult(input);
             //---------------Test Result -----------------------
@@ -126,5 +126,12 @@ namespace FizzBuzz.Tests
             // assert
             Assert.AreEqual(expected, isPrime);
         }
+
+        private static FizzBuzzer CreateFizzBuzzer()
+        {
+            var fizzBuzzer = CreateFizzBuzzer();
+            return fizzBuzzer;
+        }
+
     }
 }
